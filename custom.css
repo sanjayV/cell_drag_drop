@@ -1,0 +1,40 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	margin: 2px;
+}
+
+.main {
+	background: #ccc;
+	border: 1px solid #000;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.column {
+	height: 99%;
+	border: 1px solid #000;
+	background: #363636;
+	width: 24%;
+	margin: 4px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.report {
+	width: 98%;
+	box-sizing: border-box;
+	height: 32%;
+	background: yellow;
+	border: 1px solid #000;
+	margin: 4px;
+	text-align: center;
+}
+
+#draggableHelper {
+	background: #ff0000;
+	height: 100px;
+	width: 100px;
+}
