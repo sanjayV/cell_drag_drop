@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        .dragTarget {
+            background: #ffff00;
+            float: left;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+        .dargElement {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background: #ff00ff;
+        }
+        #dragTemp {
+           width: 100px;
+            height: 100px;
+            background: #00ffff; 
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var dragElement, dragTarget, dropTarget;
+            $('.dargElement').mousedown(function(e) {
+                e.preventDefault();
+                dragElement = $(e.target);
+                dragTarget = $(e.target).closest( ".dragTarget" );
+                console.log(e.target, dragElement.height(), dragElement.width())
+
+                dragTarget.append('<div id="dragTemp"></div>');
+
+                $(window).on('mousemove', function(e) {
+                    console.log(e.pageY,e.pageX)
+                    $('#dragTemp').offset({
+                        top: e.pageY - $('.draggable').outerHeight() / 2,
+                        left: e.pageX - $('.draggable').outerWidth() / 2
+                    })/*.on('mouseup', function() {
+                        $(this).removeClass('draggable');
+                    })*/;
+                });
+                /*$("#dragTemp").on('mousemove', function(e) {
+                    $('.draggable').offset({
+                        top: e.pageY - $('.draggable').outerHeight() / 2,
+                        left: e.pageX - $('.draggable').outerWidth() / 2
+                    }).on('mouseup', function() {
+                        $(this).removeClass('draggable');
+                    });
+                });*/
+            });
+
+            $('.dragTarget').mouseup(function(e) {
+                e.preventDefault();
+                console.log($(e.target).closest( ".dragTarget" )[0])
+                dropTarget = $(e.target).closest( ".dragTarget" );
+
+                dropTarget.append(dragElement);
+                //dragTarget.remove(dragElement);
+            });
+
+            /*$('body').on('mousedown', '.dargElement', function(e) {
+                console.log(e.target)
+                $(this).addClass('draggable').parents().on('mousemove', function(e) {
+                    $('.draggable').offset({
+                        top: e.pageY - $('.draggable').outerHeight() / 2,
+                        left: e.pageX - $('.draggable').outerWidth() / 2
+                    }).on('mouseup', function() {
+                        $(this).removeClass('draggable');
+                    });
+                });
+                e.preventDefault();
+            }).on('mouseup', function(e) {
+                console.log(e.target)
+                $('.draggable').removeClass('draggable');
+            });*/
+        });
+    </script>
+</head>
+
+<body>
+    <div class="dragTarget" id="col1">
+        Drag div one
+        <div class="dargElement" data-col="1">1</div>
+        <div class="dargElement" data-col="1">2</div>
+    </div>
+    <div class="dragTarget" id="col2">
+        Drag div two
+        <div class="dargElement" data-col="2">3</div>
+        <div class="dargElement" data-col="2">4</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<style type="text/css">
+	 #wrapper{
+	 	width: 100%;
+	 	margin: 0 auto;
+	 }
+	 #innerWrapper {
+	 	border:1px solid #ff0000;
+	 }
+	 #header{
+	 	border:1px solid #ff0000;	 	
+	 }
+	 #container{
+	 	border:1px solid #ff0000;
+	 }
+	 #footer{
+	 	width: 100%;
+	 	border:1px solid #ff0000;	 	
+	 	height: 10%;
+	 }
+	 .headerLeft{
+	 	border:1px solid #ff0000;
+	 	float: left;
+	 }
+	 .headerMid{
+	 	border:1px solid #ff0000;
+	 	float: left;
+	 }
+	 .headerRight{
+	 	border:1px solid #ff0000;
+	 	float: right;
+	 }
+	 .containerLeft{
+	 	border:1px solid #ff0000;
+	 	float: left;
+	 }
+	 .containerMid{
+	 	border:1px solid #ff0000;
+	 	float: left;
+	 }
+	 .containerRight{
+	 	border:1px solid #ff0000;
+	 	float: left;
+	 }
+
+	</style>
+	<script type="text/javascript">
+		var txt = "";
+		txt += "<p>innerWidth: " + window.innerWidth + "</p>";
+		txt += "<p>innerHeight: " + window.innerHeight + "</p>";
+		txt += "<p>outerWidth: " + window.outerWidth + "</p>";
+		txt += "<p>outerHeight: " + window.outerHeight + "</p>";
+		console.log(txt);
+		
+		$(document).ready(function(){			
+			var width = $(window).width();
+			var height = $(window).height();
+			$('.headerLeft').css('width',width/5);
+			$('.headerLeft').css('height',height/4);
+			$('.headerMid').css('width',(width/5)*(2.948));
+			$('.headerMid').css('height',height/4);
+			$('.headerRight').css('width',width/5);
+			$('.headerRight').css('height',height/4);
+			if(window.outerWidth <=720){
+			  	$('.headerMid').css('width',(width/5)*(2.9));
+			  	$('.headerRight').css('width',width/(6));
+			  }
+			// console.log(width,height);
+			// console.log('headerLeft Width',$('.headerLeft').width());
+			$(window).resize(function() {
+			  width = $(window).width();
+			  height = $(window).height();
+			  $('.headerLeft').css('height',height/4);
+			  $('.headerLeft').css('width',width/5);
+			  $('.headerMid').css('width',(width/5)*(2.9));
+			  $('.headerMid').css('height',height/4);
+			  $('.headerRight').css('width',width/5);
+			  $('.headerRight').css('height',height/4);
+			  if(window.outerWidth <=720){
+			  	$('.headerMid').css('width',(width/6)*(2.9));
+			  	$('.headerRight').css('width',width/6);
+			  }
+				console.log(width,height);
+			});
+
+		})
+
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="innerWrapper">
+			<div id="header">
+				<div id="headerLeftSide" class="headerLeft">
+				</div>
+				<div id="headerMidSide" class="headerMid">
+				</div>
+				<div id="headerRightSide" class="headerRight">
+				</div>
+			</div>
+			<div id="container">
+				<div id="containerLeftSide" class="containerLeft">
+				</div>
+				<div id="containerMidSide"  class="containerMid">
+				</div>
+				<div id="containerRightSide" class="containerRight">
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footerLeftSide" class="footerLeft">
+				</div>
+				<div id="footerMidSide"  class="footerrMid">
+				</div>
+				<div id="footerRightSide" class="footerRight">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
