@@ -1,0 +1,65 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+ #wrapper{
+ 	
+ 	height: 100%;
+ 	background: #ccc;
+ 	margin: 0 auto;
+ 	position: relative;
+ 	padding: 10px;
+ 	box-sizing: border-box;
+ }
+ .button{
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	z-index: 9;
+ }
+  #appendPane{
+ 	position: absolute;
+ 	left:100px;
+ 	top:0px;
+ 	z-index: 9;
+ }
+ .innerWrapper {
+ 	background: #333;
+ 	height:100%;
+ 	padding: 10px;
+ 	box-sizing: border-box;
+ }	 
+ .resizedArea{
+ 	border:1px solid #ff0000;
+ 	height:100%;
+ 	width: 100%;
+ }
+ .columnStyle{
+	height: 100%;
+	display:inline-block;
+	margin: 0 5px;
+	background: green;	
+	box-sizing: border-box;	
+	padding: 5px;
+	float: left;
+ }
+ .reportDiv {
+ 	background: #ff00ff;
+    height: 100%;
+    /*width: 100%;*/
+    box-sizing: border-box;
+    opacity: 0.4;
+    color: #fff;
+    text-align: center;
+    cursor: move;
+ }
+ .widgetReportStyle{	 	
+		width: 900px; 
+		height:80%; 
+		border: 1px solid #ff0000;
+		display:inline-block;			
+ }
+ .widgetcancel{
+ 	float:right;
+ 	padding:0 5px 0 5px;
+ }
